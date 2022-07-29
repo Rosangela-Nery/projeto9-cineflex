@@ -1,12 +1,16 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import '../pages.css';
+import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 export default function SelecionarHorario () {
     const [selecionar, setSelecionar] = useState([]);
+    const params = useParams();
 
     useEffect(() => {
-        const promise = axios.get("https://mock-api.driven.com.br/api/v5/cineflex/movies/1/showtimes");
+        const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/movies/${params.idFilme}/showtimes`);
         
         promise.then((res) => {
             setSelecionar(res.data.days);
@@ -24,17 +28,16 @@ export default function SelecionarHorario () {
                             <div className="hora">
                                 {seleciona.showtimes.map((item) => {
                                     return (
-                                        <>
+                                        <Link to={`/assentos/${seleciona.id}`} key={seleciona.id}>
                                             <p>{item.name}</p>
-                                        </>
+                                        </Link>
                                     )
                                 })}
                             </div>
                         </div>
                     )}
                 )}
-                <div className="rodape">
-                </div>
+                <Footer/>
             </div>
         </div>
     );
