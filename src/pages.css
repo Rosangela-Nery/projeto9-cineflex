@@ -213,8 +213,13 @@ a {
     border: 1px solid #F7C52B;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 414px) {
     .listaDeAssentos {
-        width: 500px;
+        width: 360px;
+        margin: 0 30px;
+    }
+
+    .poltrona p {
+        margin: 10px 5px;
     }
 }
