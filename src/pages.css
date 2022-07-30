@@ -151,14 +151,14 @@ a {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin: 10px 190px;
+    margin: 20px 190px;
     justify-content: center;
     align-items: center;
 }
 
 .poltrona p {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     font-size: 12px;
     font-weight: 400;
     background-color: #C3CFD9;
@@ -183,7 +183,7 @@ a {
 }
 
 .verde, .amarelo, .cinza {
-    width: 95px;
+    width: 90px;
     height: 80px;
     display: flex;
     flex-wrap: wrap;
@@ -213,7 +213,7 @@ a {
     border: 1px solid #F7C52B;
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 500px) {
     .listaDeAssentos {
         width: 360px;
         margin: 0 30px;
@@ -221,5 +221,7 @@ a {
 
     .poltrona p {
         margin: 10px 5px;
+        width: 24px;
+        height: 24px;
     }
 }
