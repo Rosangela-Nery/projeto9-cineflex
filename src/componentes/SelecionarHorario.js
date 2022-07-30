@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function SelecionarHorario () {
     const [selecionar, setSelecionar] = useState([]);
+    const [image, setImage] = useState([]);
     const params = useParams();
 
     useEffect(() => {
@@ -14,6 +15,7 @@ export default function SelecionarHorario () {
         
         promise.then((res) => {
             setSelecionar(res.data.days);
+            setImage(res.data)
         });
     }, []);
 
@@ -28,7 +30,7 @@ export default function SelecionarHorario () {
                             <div className="hora">
                                 {seleciona.showtimes.map((item) => {
                                     return (
-                                        <Link to={`/assentos/${seleciona.id}`} key={seleciona.id}>
+                                        <Link to={`/assentos/${item.id}`} key={item.id}>
                                             <p>{item.name}</p>
                                         </Link>
                                     )
@@ -37,7 +39,7 @@ export default function SelecionarHorario () {
                         </div>
                     )}
                 )}
-                <Footer/>
+                <Footer image={image}/>
             </div>
         </div>
     );
