@@ -157,8 +157,8 @@ a {
 }
 
 .poltrona p {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     font-size: 12px;
     font-weight: 400;
     background-color: #C3CFD9;
@@ -211,4 +211,10 @@ a {
 .amarelo h1 {
     background-color: #FBE192;
     border: 1px solid #F7C52B;
+}
+
+@media screen and (max-width: 500px) {
+    .listaDeAssentos {
+        width: 500px;
+    }
 }

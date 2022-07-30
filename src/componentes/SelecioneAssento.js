@@ -37,7 +37,8 @@ export default function SelecioneAssento({image}) {
                         </div>
                     )
                 })}
-                <div className="cores">
+            </div>
+            <div className="cores">
                     <div className="verde">
                         <h1></h1>
                         <p>Selecionado</p>
@@ -51,7 +52,6 @@ export default function SelecioneAssento({image}) {
                         <p>Indisponível</p>
                     </div>
                 </div>
-            </div>
             <Footer image={image} assentos={assentos}/>
         </div>
         </>
