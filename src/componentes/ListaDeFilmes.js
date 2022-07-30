@@ -1,5 +1,4 @@
 import axios from "axios";
-import { ReactDOM, useDebugValue } from "react";
 import { useState, useEffect } from "react";
 import '../pages.css';
 import { Link } from "react-router-dom";
@@ -24,7 +23,7 @@ export default function ListaDeFilmes() {
                 {itens.map((item)=> 
                     <Link to={`/sessoes/${item.id}`} key={item.id}>
                         <div className="filme">
-                            <img src={item.posterURL} id={item.id}/>
+                            <img src={item.posterURL} alt={item.title} id={item.id}/>
                         </div>
                     </Link>
                 )}

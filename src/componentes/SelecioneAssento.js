@@ -1,20 +1,28 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import '../pages.css';
 import Footer from "./Footer";
+import '../pages.css';
 
-export default function SelecioneAssento() {
-    const [itens, setItens] = useState([]);
+
+export default function SelecioneAssento({image}) {
+
+    console.log("vermelho");
+
+    const [poltrona, setPoltrona] = useState([]);
+    const [assentos, setAssentos] = useState([]);
     const params = useParams();
 
     useEffect(() => {
-        const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${params.idSessao}/seats`);
+        const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/2/seats`);
         
         promise.then((res) => {
-            setItens(res.data.seats);
+            console.log('RRRR:', res.data)
+            setPoltrona(res.data.seats);
+            setAssentos(res.data);
         });
     }, []);
+    console.log("azul");
 
 
     return (
@@ -22,13 +30,30 @@ export default function SelecioneAssento() {
         <div className='pagina_selecionar_assento'>
             <p>Selecione o(s) assento(s)</p>
             <div className="listaDeAssentos">
-                {itens.seats.map((item)=> 
-                <div className="poltrona">
-                    <p>{item.name}</p>
-                </div>)}
+                {poltrona.map((poltron) => {
+                    return (
+                        <div className="poltrona">
+                            <p>{poltron.name}</p>
+                        </div>
+                    )
+                })}
+                <div className="cores">
+                    <div className="verde">
+                        <h1></h1>
+                        <p>Selecionado</p>
+                    </div>
+                    <div className="cinza">
+                        <h1></h1>
+                        <p>Disponível</p>
+                    </div>
+                    <div className="amarelo">
+                        <h1></h1>
+                        <p>Indisponível</p>
+                    </div>
+                </div>
             </div>
+            <Footer image={image} assentos={assentos}/>
         </div>
-        <Footer />
         </>
     );
 

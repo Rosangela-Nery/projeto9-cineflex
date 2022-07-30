@@ -5,9 +5,8 @@ import '../pages.css';
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 
-export default function SelecionarHorario () {
+export default function SelecionarHorario ({image, setImage}) {
     const [selecionar, setSelecionar] = useState([]);
-    const [image, setImage] = useState([]);
     const params = useParams();
 
     useEffect(() => {
