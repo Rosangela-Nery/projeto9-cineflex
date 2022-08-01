@@ -2,6 +2,15 @@ import { Link } from 'react-router-dom';
 import '../pages.css';
 
 export default function PaginaDePedidos() {
+    
+
+    // useEffect(() => {
+    //     const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/seats/book-many`);
+        
+    //     promise.then((res) => {
+    //     });
+    // }, []);
+
     return (
         <div className='paginaDeSucesso'>
             <div className='notificacaoDoPedido'>

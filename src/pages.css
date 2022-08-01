@@ -160,7 +160,7 @@ a {
     align-items: center;
 }
 
-.poltrona p {
+.poltrona h1 {
     width: 30px;
     height: 30px;
     font-size: 12px;
@@ -173,6 +173,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 }
 
 .cores {
@@ -185,20 +187,12 @@ a {
     align-items: center;
 }
 
-.verde, .amarelo, .cinza {
-    width: 90px;
-    height: 60px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
 .cores h1 {
     width: 24px;
     height: 24px;
     border-radius: 50%;
     margin-bottom: 1px;
+    margin-left: 25px;
 }
 
 .verde h1 {
@@ -223,6 +217,13 @@ a {
     color: #293845;
     line-height: 30px;
     margin-top: 40px;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .formulario input {
@@ -286,7 +287,7 @@ button {
         margin: 10px 30px;
     }
 
-    .poltrona p {
+    .poltrona h1 {
         margin: 10px 5px;
         width: 24px;
         height: 24px;

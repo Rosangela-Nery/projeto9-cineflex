@@ -1,7 +1,6 @@
 import '../pages.css';
 
 export default function Footer({image, date}) {
-    console.log('sad: ', date)
 
     return(
         <div className="footer">
