@@ -300,3 +300,9 @@ button {
         font-size: 18px;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .footer .informacao {
+        font-size: 18px;
+    }
+}
