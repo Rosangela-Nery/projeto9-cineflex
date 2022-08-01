@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import '../pages.css';
 
-export default function PaginaDePedidos() {
+export default function PaginaDePedidos({cpf, name, image, date}) {
     
-
+    console.log("werr :", image)
     // useEffect(() => {
-    //     const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/seats/book-many`);
+    //     const promise = axios.post(`https://mock-api.driven.com.br/api/v7/cineflex/seats/book-many`);
         
     //     promise.then((res) => {
     //     });
@@ -19,8 +19,8 @@ export default function PaginaDePedidos() {
             <div className='notaDoPedido'>
                 <div className='filmeESessao'>
                     <h1>Filme e sessão</h1>
-                    <p>Enola Holmes</p>
-                    <p>24/06/2022 15:00</p>
+                    <p>{image.title}</p>
+                    <p>{`${date[0].weekday} - ${date[0].horario}`}</p>
                 </div>
                 <div className='filmeESessao'>
                     <h1>Ingressos</h1>
@@ -29,8 +29,8 @@ export default function PaginaDePedidos() {
                 </div>
                 <div className='filmeESessao'>
                     <h1>Comprador</h1>
-                    <p>Nome: João da Silva Sauro</p>
-                    <p>CPF: 123.456.789-10</p>
+                    <p>Nome: {name}</p>
+                    <p>CPF: {cpf}</p>
                 </div>
             </div>
             <Link to={`/`}>

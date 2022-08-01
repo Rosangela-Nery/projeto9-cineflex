@@ -11,6 +11,8 @@ import PaginaDePedidos from './componentes/PaginaDePedidos';
 export default function App() {
     const [image, setImage] = useState([]);
     const [date, setDate] = useState([]);
+    const [name, setName] = useState('');
+    const [cpf, setCpf] = useState('');
 
     return (
         <BrowserRouter>
@@ -18,8 +20,8 @@ export default function App() {
             <Routes>
                 <Route path='/' element={<ListaDeFilmes />} />
                 <Route path='/sessoes/:idFilme' element={<SelecionarHorario image={image} setImage={setImage}/>}/>
-                <Route path='/assentos/:idSessao' element={<SelecioneAssento image={image} setImage={setImage} date={date} setDate={setDate}/>} />
-                <Route path='/sucesso/' element={<PaginaDePedidos/>} />
+                <Route path='/assentos/:idSessao' element={<SelecioneAssento image={image} setImage={setImage} date={date} setDate={setDate} name={name} setName={setName} cpf={cpf} setCpf={setCpf}/>} />
+                <Route path='/sucesso/' element={<PaginaDePedidos name={name} setName={setName} cpf={cpf} setCpf={setCpf} image={image} date={date}/>} />
             </Routes>
         </BrowserRouter>
     );

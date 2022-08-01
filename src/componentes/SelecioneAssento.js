@@ -5,12 +5,10 @@ import Footer from "./Footer";
 import '../pages.css';
 import { Link } from "react-router-dom";
 
-export default function SelecioneAssento({image, setImage, date, setDate}) {
+export default function SelecioneAssento({image, setImage, date, setDate, cpf, setCpf, name, setName}) {
 
     const [poltrona, setPoltrona] = useState([]);
     const params = useParams();
-    const [name, setName] = useState('');
-    const [cpf, setCpf] = useState('');
     const [idAssento, setIdAssento] = useState([]);
     // const [assentoSelecionado, setAssentoSelecionado] = useState([]);
 
@@ -50,21 +48,26 @@ export default function SelecioneAssento({image, setImage, date, setDate}) {
             if(item.id === id) {
 
                 if (item.estado === 'disponivel') {
-                    const guardar = [...idAssento, item.id]
-                    setIdAssento(guardar);
-                    console.log("aaaaaaaaaaaa: ", guardar)
+                        if(!idAssento.includes(id)) {
+                            const guardar = [...idAssento, id]
+                            setIdAssento(guardar);
+                        }
+
+    
+
                     return {'id': item.id, 'estado': 'selecionado', 'isAvailable': item.isAvailable, 'name': item.name}
                 }
 
                 else if (item.estado === 'selecionado') {
-                    
+  
+                    const retirar = idAssento.filter((item) => item != id)
+                        setIdAssento(retirar)
+
                     return {'id': item.id, 'estado': 'disponivel', 'isAvailable': item.isAvailable, 'name': item.name}
                 }
             }
 
             else {
-                const retirar = idAssento.filter((item) => item != item.id)
-                setIdAssento(retirar)
                 return {'id': item.id, 'estado': item.estado, 'isAvailable': item.isAvailable, 'name': item.name}
             }
         })
@@ -81,21 +84,21 @@ export default function SelecioneAssento({image, setImage, date, setDate}) {
                     if (poltron.estado === 'indisponivel') {
                         return (
                             <div className="poltrona amarelo">
-                                <h1 >{poltron.name}</h1>
+                                <h1>{poltron.name}</h1>
                             </div>
                         )
                     }
                     else if (poltron.estado === 'disponivel') {
                         return(
                             <div className="poltrona" onClick={() => SelecionarPoltrona(poltron.id)}>
-                                <h1 >{poltron.name}</h1>
+                                <h1>{poltron.name}</h1>
                             </div>
                         )
                     }
                     else if (poltron.estado === 'selecionado') {
                         return(
                             <div className="poltrona verde" onClick={() => SelecionarPoltrona(poltron.id) }>
-                                <h1 >{poltron.name}</h1>
+                                <h1>{poltron.name}</h1>
                             </div>
                         )
                     }
@@ -137,7 +140,7 @@ export default function SelecioneAssento({image, setImage, date, setDate}) {
                         required/>
 
                         <div className="button">
-                            <Link  to={`/sucesso/?name/cpf`} >
+                            <Link to={`/sucesso/`} >
                                 <button type="submit">Reservar assento(s)</button>
                             </Link>
                         </div>
