@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Footer from "./Footer";
 import '../pages.css';
-
+import { Link } from "react-router-dom";
 
 export default function SelecioneAssento({image, setImage, date, setDate}) {
 
@@ -39,22 +39,31 @@ export default function SelecioneAssento({image, setImage, date, setDate}) {
                     )
                 })}
             </div>
-                <div className="cores">
-                    <div className="verde">
-                        <h1></h1>
-                        <p>Selecionado</p>
-                    </div>
-                    <div className="cinza">
-                        <h1></h1>
-                        <p>Disponível</p>
-                    </div>
-                    <div className="amarelo">
-                        <h1></h1>
-                        <p>Indisponível</p>
-                    </div>
+            <div className="cores">
+                <div className="verde">
+                    <h1></h1>
+                    <p>Selecionado</p>
                 </div>
-
-            
+                <div className="cinza">
+                     <h1></h1>
+                    <p>Disponível</p>
+                </div>
+                <div className="amarelo">
+                    <h1></h1>
+                    <p>Indisponível</p>
+                </div>
+            </div>
+            <div className="formulario">
+                <form>
+                    <label for="formName">Nome do comprador:</label>
+                    <input id="formName" type="text" placeholder="Digite seu nome..."/>
+                    <label for="formCPF">CPF do comprador:</label>
+                    <input id="formCPF" type="text" placeholder="Digite seu CPF..."/>
+                </form>
+            </div>
+            <Link to={`/sucesso/`} >
+            <button>Reservar assento(s)</button>
+            </Link>
         </div>
         <Footer image={image} date={date}/>
         </>

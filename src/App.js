@@ -5,6 +5,7 @@ import ListaDeFilmes from "./componentes/ListaDeFilmes";
 import SelecionarHorario from "./componentes/SelecionarHorario";
 import SelecioneAssento from './componentes/SelecioneAssento';
 import { useState } from 'react';
+import PaginaDePedidos from './componentes/PaginaDePedidos';
 
 
 export default function App() {
@@ -15,9 +16,10 @@ export default function App() {
         <BrowserRouter>
             <BarraTopo />
             <Routes>
-                <Route path='/' exact element={<ListaDeFilmes />} />
+                <Route path='/' element={<ListaDeFilmes />} />
                 <Route path='/sessoes/:idFilme' element={<SelecionarHorario image={image} setImage={setImage}/>}/>
                 <Route path='/assentos/:idSessao' element={<SelecioneAssento image={image} setImage={setImage} date={date} setDate={setDate}/>} />
+                <Route path='/sucesso/' element={<PaginaDePedidos/>} />
             </Routes>
         </BrowserRouter>
     );
