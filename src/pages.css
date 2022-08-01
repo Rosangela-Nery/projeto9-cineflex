@@ -245,7 +245,7 @@ button {
     border-radius: 5px;
 
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -289,5 +289,14 @@ button {
         margin: 10px 5px;
         width: 24px;
         height: 24px;
+    }
+
+    .formulario {
+        width: 327px;
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 18px;
     }
 }
