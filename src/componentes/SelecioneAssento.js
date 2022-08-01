@@ -5,21 +5,22 @@ import Footer from "./Footer";
 import '../pages.css';
 
 
-export default function SelecioneAssento({image}) {
+export default function SelecioneAssento({image, setImage, date, setDate}) {
 
     console.log("vermelho");
 
     const [poltrona, setPoltrona] = useState([]);
-    const [assentos, setAssentos] = useState([]);
     const params = useParams();
 
     useEffect(() => {
-        const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/2/seats`);
+        const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${params.idSessao}/seats`);
         
         promise.then((res) => {
+
             console.log('RRRR:', res.data)
             setPoltrona(res.data.seats);
-            setAssentos(res.data);
+            setDate([{'weekday': res.data.day.weekday, 'horario': res.data.name}]);
+            setImage(res.data.movie)
         });
     }, []);
     console.log("azul");
@@ -38,7 +39,7 @@ export default function SelecioneAssento({image}) {
                     )
                 })}
             </div>
-            <div className="cores">
+                <div className="cores">
                     <div className="verde">
                         <h1></h1>
                         <p>Selecionado</p>
@@ -52,8 +53,10 @@ export default function SelecioneAssento({image}) {
                         <p>Indisponível</p>
                     </div>
                 </div>
-            <Footer image={image} assentos={assentos}/>
+
+            
         </div>
+        <Footer image={image} date={date}/>
         </>
     );
 

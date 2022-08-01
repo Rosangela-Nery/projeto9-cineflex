@@ -14,7 +14,7 @@ export default function SelecionarHorario ({image, setImage}) {
         
         promise.then((res) => {
             setSelecionar(res.data.days);
-            setImage(res.data)
+            setImage(res.data);
         });
     }, []);
 
@@ -38,7 +38,7 @@ export default function SelecionarHorario ({image, setImage}) {
                         </div>
                     )}
                 )}
-                <Footer image={image}/>
+                <Footer image={image} date={""}/>
             </div>
         </div>
     );

@@ -9,14 +9,15 @@ import { useState } from 'react';
 
 export default function App() {
     const [image, setImage] = useState([]);
+    const [date, setDate] = useState([]);
 
     return (
         <BrowserRouter>
             <BarraTopo />
             <Routes>
                 <Route path='/' exact element={<ListaDeFilmes />} />
-                <Route path='/sessoes/:idFilme' element={<SelecionarHorario image={image} setImage={setImage}/>} />
-                <Route path='/assentos/:idSessao' element={<SelecioneAssento image={image}/>} />
+                <Route path='/sessoes/:idFilme' element={<SelecionarHorario image={image} setImage={setImage}/>}/>
+                <Route path='/assentos/:idSessao' element={<SelecioneAssento image={image} setImage={setImage} date={date} setDate={setDate}/>} />
             </Routes>
         </BrowserRouter>
     );

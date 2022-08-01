@@ -120,15 +120,6 @@ a {
     left: 0;
 }
 
-.footer p {
-    font-size: 20px;
-    font-family: 'Roboto';
-    color: #293845;
-
-    display: flex;
-    align-items: center;
-}
-
 .footer .filme {
     width: 64px;
     height: 89px;
@@ -144,14 +135,27 @@ a {
     align-items: center;
 }
 
+.footer .informacao {
+    font-size: 20px;
+    font-family: 'Roboto';
+    color: #293845;
+    line-height: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .listaDeAssentos {
     width: 550px;
     height: 100%;
+    margin-top: 20px;
     color: black;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    margin: 20px 190px;
+    margin-left: 190px;
+    margin-right: 190px;
     justify-content: center;
     align-items: center;
 }
@@ -163,7 +167,7 @@ a {
     font-weight: 400;
     background-color: #C3CFD9;
     border: 1px solid #808F9D;
-    margin: 15px 10px;
+    margin: 8px 12px;
     border-radius: 50%;
 
     display: flex;
@@ -173,8 +177,7 @@ a {
 
 .cores {
     width: 350px;
-    height: 100px;
-    margin-top: 20px;
+    height: 80px;
     font-size: 13px;
     font-weight: 400;
     display: flex;
@@ -184,7 +187,7 @@ a {
 
 .verde, .amarelo, .cinza {
     width: 90px;
-    height: 80px;
+    height: 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -216,7 +219,7 @@ a {
 @media screen and (max-width: 500px) {
     .listaDeAssentos {
         width: 360px;
-        margin: 0 30px;
+        margin: 10px 30px;
     }
 
     .poltrona p {
