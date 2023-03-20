@@ -9,7 +9,7 @@
 
 
 #
-#### Acesse o app : <a href="projeto9-cineflex-two-snowy.vercel.app">CineFlex</a>
+#### Acesse o app : <a href="https://projeto9-cineflex-two-snowy.vercel.app/">CineFlex</a>
 #
 [![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)]()
 [![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)]()
