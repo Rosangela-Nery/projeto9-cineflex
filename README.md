@@ -5,7 +5,7 @@
  É um Front-end de uma aplicação para venda de ingressos de cinema que possíbilita escolher filmes, assentos, horários e ainda inserir o nome e CPF do comprador. 
  Obs: Foi utilizada uma API pronta.
 
-<img src="public/imagens/cine1.png" width=100% height=400px/>
+<img src="public/imagens/cine1.png" width=1000px height=400px/>
 
 
 #
